@@ -1,0 +1,11 @@
+.homePage div{
+    display: flex;
+    justify-content: space-between;
+    padding:25px;
+    text-align: center;
+   
+}
+img{
+    max-width: 100%;
+    border-radius:20px;
+}

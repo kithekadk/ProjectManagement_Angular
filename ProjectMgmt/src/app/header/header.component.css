@@ -1,0 +1,29 @@
+.header, .header div{
+    background-color: blueviolet;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header{
+    padding: 15px;
+}
+.header div{
+    gap:30px;
+}
+#btnSignUp{
+    background-color: skyblue;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+#btnSignIn{
+    background-color: rgb(29, 194, 29);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+}

@@ -1,0 +1,19 @@
+.mainLogin{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.login{
+    padding: 30px;
+    background-color: blueviolet;
+    margin-top: 20px;
+    font-size: 20px;
+    color: white;
+    border-radius: 10px;
+}
+input, button{
+    width:25vw;
+    padding:5px;
+    
+}

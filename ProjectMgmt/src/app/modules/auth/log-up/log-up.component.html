@@ -1,0 +1,42 @@
+<div>
+    <div class="signUp">
+        <form [formGroup]="form" (ngSubmit)="onRegister()" class="signUpForm">
+            <div style="text-align: center;"><h2>CREATE AN ACCOUNT</h2></div><br>
+            <div>
+                <label for="firstName">Input first name</label><br>
+                <input type="text" formControlName="firstName" id="firstName">
+                <p></p>
+            </div>
+            <div>
+                <label for="lastName">Input last name</label><br>
+                <input type="text" formControlName="lastName" id="lastName">
+                <p></p>
+            </div>
+            <div>
+                <label for="username">Input username</label><br>
+                <input type="text" formControlName="userName">
+                <p></p>
+            </div>
+            <div>
+                <label for="email">Input Email</label><br>
+                <input type="email" formControlName="email">
+                <p></p>
+            </div>
+            <div>
+                <label for="password">Input Password</label><br>
+                <input type="password" formControlName="password">
+                <p></p>
+            </div>
+            <!-- <div>
+                <label for="confirm-password">Confirm Password</label><br>
+                <input type="password" formControlName="confirmPassword">
+                <p></p>
+            </div><br> -->
+<br>
+            <div>
+                <button type="submit" style="background-color: green;">Sign Up</button>
+            </div>
+
+        </form>
+    </div>
+</div>
