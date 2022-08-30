@@ -1,0 +1,44 @@
+<div class="adminContainer">
+    <div class="dashboard">
+        <i style="font-size: 30px;" class="fa-solid fa-people-roof">&nbsp; P M U S </i>
+        <br><br>
+        <i class="fa-solid fa-house-user">&nbsp; DASHBOARD</i> 
+        <br><br>
+        <p><a href="">PROJECTS</a></p>
+        <p><a href="">USERS</a></p>
+    </div>
+    <div class="navBar">
+        <div>
+            <input type="text" placeholder="Search Project ..." id="">
+            <i style="font-size: 35px; cursor: pointer; color: white;" class="fa-solid fa-power-off"></i>
+        </div>
+    </div>
+
+    <div class="heading">
+        <div>
+           
+                <h2>PROJECTS/ USERS</h2><br>
+                
+            
+        </div>
+       
+    </div>
+    <div class="display">
+        <div>
+            <div>
+                <select name="status">
+                    <option value="">--Select Status--</option>
+                    <option *ngFor="let option of SelectStatus">{{option}}</option>
+                </select>
+            </div>
+            <div>
+                <div style="font-size: 20px;" class="createProject" >
+                    <a routerLink="/admin/dashboard/newproject">Create Project &nbsp; 
+                    <i style="font-size: 25px;" class="fa-solid fa-folder-plus"></i></a>
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </div>
+        PROJECTS
+    </div>
+</div>

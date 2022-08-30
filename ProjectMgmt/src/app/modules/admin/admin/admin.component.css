@@ -1,0 +1,79 @@
+.adminContainer{
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 15vw 35vw 48vw;
+    grid-template-rows: 10vh 5vh 70vh;
+    grid-template-areas: "a b b"
+                         "a c c"
+
+                         "a d d";
+    margin-top: 0.5vw;
+    gap:5px;
+    padding: 5px;
+    
+}
+.dashboard{
+    grid-area: a;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    text-align: center;
+    background-color: blueviolet;
+    padding-top: 20px;
+    min-height: 90vh;
+    color: white;
+    align-items: center;
+}
+.navBar{
+    grid-area: b;
+    background-color: blueviolet;
+    max-height: 10vh;
+}
+.navBar div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+}
+.heading{
+    grid-area: c;
+    margin-left: 10px;
+}
+.heading div, .display div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.display{
+    grid-area: d;
+    margin-left: 20px;
+}
+
+input{
+    padding:5px;
+    width:30vw;
+    border: none;
+    border-radius:5px;
+}
+p{
+    padding: 13px;
+    background-color: skyblue;
+    width:13vw;
+    font-size: 20px;
+    border-radius: 10px;
+    
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.createProject{
+    padding:5px;
+    background-color: skyblue;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}

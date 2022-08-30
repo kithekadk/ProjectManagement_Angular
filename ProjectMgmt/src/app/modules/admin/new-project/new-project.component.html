@@ -1,0 +1,33 @@
+<div>
+    <div class="regProject">
+        <form [formGroup]="form">
+            <hr>
+            <div>
+                <label>Project Name</label><br>
+                <input type="text" formControlName="projectName" />
+                <p></p>
+            </div>
+            <div>
+                <label>Project Description </label><br>
+                <input type="text" formControlName="Description" />
+                <p></p>
+            </div>
+            <div>
+                <label>Project Deadline</label><br>
+                <input type="date" formControlName="Deadline" />
+                <p></p>
+            </div>
+            <div>
+                <label>Assign to:</label><br>
+                <select formControlName="userName">
+                    <option>--Allocate to User--</option>
+                </select>
+            </div><br>
+
+            <div>
+                <button>Create</button>
+
+            </div>
+        </form>
+    </div>
+</div>

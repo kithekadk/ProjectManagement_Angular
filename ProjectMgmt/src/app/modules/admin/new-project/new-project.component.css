@@ -1,0 +1,28 @@
+.regProject{
+    /* display: 20vw; */
+    background-color: blueviolet;
+    color:black;
+    border-radius: 10px;
+}
+form{
+    display: flex;
+    flex-wrap: wrap;    
+    gap:3px;
+    align-items: center;
+    padding: 7px;
+    color: white;
+    
+}
+input{
+
+    border: none;
+    border-radius: 5px;
+    padding:5px;
+}
+button{
+    border: none;
+    background-color: green;
+    color:white;
+    border-radius: 4px;
+    padding:5px;
+}
