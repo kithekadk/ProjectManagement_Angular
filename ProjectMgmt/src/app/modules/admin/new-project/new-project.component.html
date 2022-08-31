@@ -1,6 +1,9 @@
 <div>
     <div class="regProject">
-        <form [formGroup]="form">
+        <p style="color : green; padding-left:30px;" *ngIf="disclaimer">Project registered successfully</p>
+        <form [formGroup]="form" (ngSubmit)="addProject()">
+            
+            
             <hr>
             <div>
                 <label>Project Name</label><br>
@@ -9,18 +12,19 @@
             </div>
             <div>
                 <label>Project Description </label><br>
-                <input type="text" formControlName="Description" />
+                <input type="text" formControlName="description" />
                 <p></p>
             </div>
             <div>
                 <label>Project Deadline</label><br>
-                <input type="date" formControlName="Deadline" />
+                <input type="date" formControlName="deadline" />
                 <p></p>
             </div>
             <div>
                 <label>Assign to:</label><br>
                 <select formControlName="userName">
                     <option>--Allocate to User--</option>
+                    <option *ngFor="let option of userNames">{{option.userName}}</option>
                 </select>
             </div><br>
 

@@ -4,13 +4,18 @@
         <br><br>
         <i class="fa-solid fa-house-user">&nbsp; DASHBOARD</i> 
         <br><br>
-        <p><a href="">PROJECTS</a></p>
-        <p><a href="">USERS</a></p>
+        <h2>PROJECTS</h2>
+       
+        <h5 (click)="filterCategory('')"><a>All Projects</a></h5>
+        <h5 (click)="filterCategory('Pending')"><a>Pending</a></h5>
+        <h5 (click)="filterCategory('Completed')"><a>Completed</a></h5> 
+        <h2>USERS</h2>
+        <h5><a>All Users</a></h5>
     </div>
     <div class="navBar">
         <div>
             <input type="text" placeholder="Search Project ..." id="">
-            <i style="font-size: 35px; cursor: pointer; color: white;" class="fa-solid fa-power-off"></i>
+            <i routerLink="" style="font-size: 35px; cursor: pointer; color: white;" class="fa-solid fa-power-off"></i>
         </div>
     </div>
 
@@ -24,14 +29,9 @@
        
     </div>
     <div class="display">
-        <div>
-            <div>
-                <select name="status">
-                    <option value="">--Select Status--</option>
-                    <option *ngFor="let option of SelectStatus">{{option}}</option>
-                </select>
-            </div>
-            <div>
+        <div class="displayTopic">
+
+            <div class="createNew">
                 <div style="font-size: 20px;" class="createProject" >
                     <a routerLink="/admin/dashboard/newproject">Create Project &nbsp; 
                     <i style="font-size: 25px;" class="fa-solid fa-folder-plus"></i></a>
@@ -39,6 +39,20 @@
                 </div>
             </div>
         </div>
-        PROJECTS
+        <div class="parentProject">
+           
+
+                <div  *ngFor="let project of myProjects2">
+                    <div class="oneProject">
+                        <p>Name:  {{project.projectName}}</p>
+                        <p>Desc:  {{project.description}}</p>
+                        <p>Due:   {{project.deadline}}</p>
+                        <p>status:{{project.status}}</p>  
+                        <i style="color: red; font-size:20px;" class="fa-sharp fa-solid fa-trash"></i>
+                    </div>
+                </div>
+
+            
+        </div>
     </div>
 </div>

@@ -9,10 +9,12 @@ const routes: Routes = [
   children:[
    {path:'main', component:HomePageComponent}, 
    {path:'auth', loadChildren:()=>import('./modules/auth/auth.module')
-    .then(mod=>mod.AuthModule)}
+    .then(mod=>mod.AuthModule)},
+    {path:'user', loadChildren:()=>import('./modules/user/user.module')
+    .then(mod=>mod.UserModule)}
   ]},
   {path:'admin', loadChildren:()=>import('./modules/admin/admin.module')
-  .then(mod=>mod.AdminModule)}
+  .then(mod=>mod.AdminModule)},
   
 ];
 

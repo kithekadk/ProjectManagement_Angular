@@ -1,0 +1,40 @@
+
+POST http://localhost:5491/project/create
+Content-Type: application/json
+
+{
+    "projectName":"abc",
+    "description":"new",
+    "deadline": "1/8/2022",
+    "userName": "dan"
+}
+
+###
+GET http://localhost:5491/project/allprojects
+Content-Type: application/json
+
+###
+POST http://localhost:5491/user/create
+Content-Type: application/json
+
+{
+    "userName":"abc",
+    "firstName":"new",
+    "lastName": "1/8/2022",
+    "email": "dan@gmail.com",
+    "password": "abc"
+
+}
+
+###
+GET http://localhost:5491/user/idle
+Content-Type: application/json
+
+###
+POST http://localhost:5491/user/login
+Content-Type: application/json
+
+{
+    "email":"kakinyidk@gmail.com",
+    "password": "12345678"
+}

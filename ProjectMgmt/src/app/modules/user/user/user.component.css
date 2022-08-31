@@ -1,0 +1,10 @@
+.userMain{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+}
+.dashboard{
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+}

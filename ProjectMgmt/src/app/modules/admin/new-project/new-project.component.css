@@ -1,8 +1,9 @@
 .regProject{
     /* display: 20vw; */
-    background-color: blueviolet;
+    background-color: skyblue;
     color:black;
     border-radius: 10px;
+    width: 80vw;
 }
 form{
     display: flex;
@@ -10,14 +11,20 @@ form{
     gap:3px;
     align-items: center;
     padding: 7px;
-    color: white;
+    color: black;
     
 }
 input{
-
     border: none;
     border-radius: 5px;
     padding:5px;
+    
+}
+input[type="text"]{
+    width:23vw;
+}
+select{
+    width:15vw;
 }
 button{
     border: none;
