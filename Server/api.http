@@ -23,7 +23,6 @@ Content-Type: application/json
     "lastName": "1/8/2022",
     "email": "dan@gmail.com",
     "password": "abc"
-
 }
 
 ###
@@ -35,6 +34,17 @@ POST http://localhost:5491/user/login
 Content-Type: application/json
 
 {
-    "email":"kakinyidk@gmail.com",
+    "email":"abcd@gmail.com",
     "password": "12345678"
 }
+
+
+###
+GET http://localhost:5491/user/check
+Content-Type: application/json
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6IkRhbnRleiIsImZpcnN0TmFtZSI6IkRhbmllbCIsImxhc3ROYW1lIjoiS2l0aGVrYSIsImVtYWlsIjoia2FraW55aWRrQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MjAxMzM4MywiZXhwIjoxNjYyMDEzNjgzfQ.LDdt-Rtdt8F80wWpGMCmphOJ7xE-l5T1M9d4RLv23cA
+
+###
+GET http://localhost:5491/user/assigned
+Content-Type: application/json
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6ImtpdGhla2EiLCJmaXJzdE5hbWUiOiJkYW5pZWwiLCJsYXN0TmFtZSI6ImtpdGhla2EiLCJlbWFpbCI6ImFiY2RAZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJpYXQiOjE2NjIwMzczODEsImV4cCI6MTY2MjAzNzY4MX0.mjVRx_7yJJ_XFNZRyGpCQ7upBc6jesjJp7aTIk-98U0

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiServiceService, project } from '../../auth/api-service.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { ApiServiceService, project } from '../../auth/api-service.service';
 })
 export class AdminComponent implements OnInit {
 
-  constructor(private apiService:ApiServiceService) { }
+  constructor(private apiService:ApiServiceService, private router:Router) { }
 
   myProjects!:project[]
   myProjects2! :project[]
@@ -31,5 +32,14 @@ export class AdminComponent implements OnInit {
       return projects
     })
     return this.myProjects2
+  }
+
+  onLogout(){
+    localStorage.clear()
+    this.router.navigate([''])
+    setTimeout(() => {
+      window.location.reload()
+    }, 500);
+    
   }
 }

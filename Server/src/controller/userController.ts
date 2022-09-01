@@ -5,6 +5,8 @@ import { sqlConfig } from "../config/config";
 import { LoginValidator, userValidator } from "../helpers/userValidator";
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken'
+import { ExtendedData } from "../middleware/verifyToken";
+import { customProject, Data } from "../interfaces/projectInterfaces";
 
 export const createNewUser = async (req:customUser, res:Response)=>{
     try {
@@ -105,5 +107,27 @@ export const loginUser = async (req:customUser, res:Response)=>{
             console.log(error);
             
         }
+    }
+}
+
+export const checkUserRole = async(req:ExtendedData, res:Response)=>{
+    if (req.info){
+        res.json({email: req.info.email , role: req.info.role, userName: req.info.userName})
+    }
+}
+
+export const checkAssigned = async(req:customProject, res:Response)=>{
+    try {
+        const pool= await mssql.connect(sqlConfig)
+
+        const assignedProj: Data[]= await(
+            await pool.request()
+            .execute('checkAssigned')).recordset
+
+        res.status(200).json(
+            assignedProj
+        )
+    } catch (error) {
+        error
     }
 }

@@ -6,6 +6,14 @@
     </div>
     <div class="display">
         PROJECTS
+        <div *ngFor="let project of myProjects">
+            <div>
+                <p>Project ID{{project.projectId}}</p>
+                <p>Project Name{{project.projectName}}</p>
+                <p>Project Description{{project.description}}</p>
+                <p>Project Deadline{{project.deadline}}</p>
+            </div>
+        </div>
     </div>
 
 
