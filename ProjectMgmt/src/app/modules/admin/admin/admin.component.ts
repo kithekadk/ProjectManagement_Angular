@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { map, Observable, tap } from 'rxjs';
 import { ApiServiceService, project } from '../../auth/api-service.service';
 
 @Component({
@@ -11,26 +12,31 @@ export class AdminComponent implements OnInit {
 
   constructor(private apiService:ApiServiceService, private router:Router) { }
 
-  myProjects!:project[]
-  myProjects2! :project[]
+  list$: Observable<any> = new Observable();
+
+  myProjects:Observable<project[]> = new Observable();
+  myProjects2: Observable<project[]> = new Observable();
+  deleteResp$: Observable<any> = new Observable();
   
   SelectStatus = ['Completed','Uncompleted']
   ngOnInit(): void {
     this.showProjects()
   }
 
+  // Search(){
+  //   this.apiService.activate.emit(this.project)
+  // }
   showProjects(){
-    this.apiService.getProjects().subscribe(res=>{
-      this.myProjects = res
-      this.myProjects2 = res
-    })
+    this.myProjects= this.apiService.getProjects()
+    this.myProjects2= this.apiService.getProjects()
   }
 
   filterCategory(status:string){
-    this.myProjects2 = this.myProjects.filter(item => {
-      let projects = (item.status === status || status == '')
+    this.myProjects2 = this.myProjects.pipe(map(item => {
+      let projects = item.filter(el=>el.status=== status || el.status==' ')
+      // let projects = (item === status || status == '')
       return projects
-    })
+    }))
     return this.myProjects2
   }
 
@@ -42,4 +48,12 @@ export class AdminComponent implements OnInit {
     }, 500);
     
   }
+
+  onDelete(projectname:any){
+    this.deleteResp$ = this.apiService.deleteProject(projectname)
+    .pipe(
+      tap(val => { 
+        setTimeout(() => {
+          window.location.reload()
+        }, 500);}))}
 }

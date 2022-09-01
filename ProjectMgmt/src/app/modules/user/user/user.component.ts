@@ -24,4 +24,11 @@ export class UserComponent implements OnInit {
     })
   }
 
+  Complete(projectname: any){
+    this.apiService.setComplete(projectname).subscribe({
+      next: (data) => console.log(data),
+      error: (error) => console.log(error),
+      complete: () => console.log("done setting complete")
+    })
+  }
 }

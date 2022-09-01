@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiServiceService } from '../api-service.service';
+import { jituEmailValidator } from './custom-validator';
 
 @Component({
   selector: 'app-log-up',
@@ -11,14 +12,15 @@ import { ApiServiceService } from '../api-service.service';
 export class LogUpComponent implements OnInit {
   
 
-  constructor(private fb:FormBuilder, private apiService:ApiServiceService, private router:Router) { }
+  constructor(private fb:FormBuilder, private apiService:ApiServiceService, private router:Router) {
+   }
   form! : FormGroup;
   ngOnInit(): void {
       this.form = this.fb.group({
         firstName: ['', Validators.required],
         lastName: ['', Validators.required],
         userName: ['', Validators.required],
-        email: ['', Validators.required],
+        email: ['', [Validators.required, jituEmailValidator()]],
         password: ['', Validators.required]
       })
   }

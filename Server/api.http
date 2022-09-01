@@ -48,3 +48,17 @@ token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6IkRhbnRleiIsImZpcnN0T
 GET http://localhost:5491/user/assigned
 Content-Type: application/json
 token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6ImtpdGhla2EiLCJmaXJzdE5hbWUiOiJkYW5pZWwiLCJsYXN0TmFtZSI6ImtpdGhla2EiLCJlbWFpbCI6ImFiY2RAZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJpYXQiOjE2NjIwMzczODEsImV4cCI6MTY2MjAzNzY4MX0.mjVRx_7yJJ_XFNZRyGpCQ7upBc6jesjJp7aTIk-98U0
+
+###
+GET http://localhost:5491/project/delete/:abc
+Content-Type: application/json
+
+
+###
+POST http://localhost:5491/project/complete
+Content-Type: application/json
+
+{
+    "projectName":"abcd"
+}
+

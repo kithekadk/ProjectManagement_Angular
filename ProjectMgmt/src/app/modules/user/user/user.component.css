@@ -8,3 +8,30 @@
     display: flex;
     flex-direction: column;
 }
+
+#users td, #users th {
+    border: 1px solid #ddd;
+    padding: 20px;
+  }
+  
+  #users tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #users tr:hover {background-color: #ddd;}
+  
+  #users th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: blueviolet;
+    color: white;
+  }
+
+.display{
+    display: flex;
+    flex-direction: column;
+}
+
+#disclaimer{
+    position: absolute;
+    top: 100px;
+}

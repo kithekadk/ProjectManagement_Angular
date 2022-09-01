@@ -1,18 +1,18 @@
 <div class="header">
     <div>
-        <div style="color: white;">
+        <div style="color: white; cursor:pointer" routerLink="">
             <i style="font-size: 40px;" class="fa-solid fa-people-roof">&nbsp; P M U S </i>
         </div>
     </div>
     <div>
         <div>
-            <button id="btnSignUp" routerLink="/home/auth/1">Sign Up <i class="fa-solid fa-user-plus"></i></button>
+            <button *ngIf="!auth.isLoggedIn()" id="btnSignUp" routerLink="/home/auth/1">Sign Up <i class="fa-solid fa-user-plus"></i></button>
         </div>
         <div>
-            <i (click)="onLogout()" style="font-size: 35px; cursor: pointer; color: white;" class="fa-solid fa-power-off"></i>
+            <i *ngIf="auth.isLoggedIn()" (click)="onLogout()" style="font-size: 35px; cursor: pointer; color: white;" class="fa-solid fa-power-off"></i>
         </div>
         <div>
-            <button id="btnSignIn" routerLink="/home/auth/2">Log In <i class="fa-solid fa-lock-open"></i></button>
+            <button *ngIf="!auth.isLoggedIn()" id="btnSignIn" routerLink="/home/auth/2">Log In <i class="fa-solid fa-lock-open"></i></button>
         </div>
     </div>
 </div>

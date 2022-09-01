@@ -36,17 +36,26 @@ export class NewProjectComponent implements OnInit {
   }
 
   disclaimer = false
+  disclaimer2 = false
 
   addProject(){
     let object={
       form: this.form.value
     }
     this.apiService.addProject(object.form).subscribe(res=>{
-      console.log(res);
-      this.disclaimer=true
+      console.log(object.form);
+
+      if (!object.form){
+        this.disclaimer2 = true
+      }else{
+        this.disclaimer=true
+      }
+      window.location.reload()
       setTimeout(() => {
         this.router.navigate(['admin/dashboard'])
-      }, 1500);     
+        
+      }, 1500);  
+
     })
 
   }

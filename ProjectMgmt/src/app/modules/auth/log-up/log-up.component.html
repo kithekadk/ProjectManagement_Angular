@@ -5,7 +5,7 @@
             <div>
                 <label for="firstName">Input first name</label><br>
                 <input type="text" formControlName="firstName" id="firstName">
-                <p></p>
+                <p *ngIf="form.controls['firstName'].dirty && form.hasError('required','firstName')">*First name is required</p>
             </div>
             <div>
                 <label for="lastName">Input last name</label><br>
@@ -20,7 +20,7 @@
             <div>
                 <label for="email">Input Email</label><br>
                 <input type="email" formControlName="email">
-                <p></p>
+                <span *ngIf="form.controls['email'].dirty && form.hasError('required','email')">*Input a valid email</span>
             </div>
             <div>
                 <label for="password">Input Password</label><br>
@@ -30,7 +30,8 @@
 
 <br>
             <div>
-                <button type="submit" style="background-color: green;">Sign Up</button>
+                <button type="submit" [disabled]="form.invalid" style="background-color: green;
+                color:white;">Sign Up</button>
             </div>
 
         </form>

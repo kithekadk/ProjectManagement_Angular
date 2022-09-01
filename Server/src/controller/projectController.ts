@@ -48,3 +48,52 @@ export const allProjects = async (req: customProject, res:Response)=>{
         }
     }
 }
+
+export const projectDelete = async(req:customProject, res:Response)=>{
+    try {
+        const projectName=req.params.projectname
+
+        const pool = await mssql.connect(sqlConfig)
+        await pool.request()
+        .input('projectName',mssql.VarChar, projectName)
+        .execute('deleteProject')
+
+        return res.json({message: `PROJECT ${projectName} deleted`}) 
+    } catch (error) {
+        console.log(error);
+        
+        if(error instanceof RequestError){
+            return res.status(404).json({
+                message:"No Task With That Name."
+            })
+        }
+    }
+
+}
+
+
+export const updateComplete = async (req:customProject, res:Response)=>{
+    try {
+        const projectName= req.params.projectname;
+
+        const pool = await mssql.connect(sqlConfig);
+
+        await pool.request()
+        .input('projectName', mssql.VarChar, projectName)
+        .execute('setComplete')
+
+        return res.status(200).json({
+            message: "Task completed"
+        })
+    } catch (error) {
+        if(error instanceof RequestError){
+            res.status(404).json({
+                message:error.message
+            })
+        }
+        else{
+            res.status(500).json({
+                message:"Internal Server Error"})
+        }
+    }
+}

@@ -33,3 +33,10 @@ button{
     border-radius: 4px;
     padding:5px;
 }
+
+input.ng-invalid.ng-touched{
+    border:2px solid red
+}
+input.ng-valid.ng-touched{
+    border:2px solid green
+}

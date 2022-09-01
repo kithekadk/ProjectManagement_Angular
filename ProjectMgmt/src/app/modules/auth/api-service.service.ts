@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { map } from 'rxjs';
+import { EventEmitter, Injectable } from '@angular/core';
+import { map, Observable } from 'rxjs';
 
 export interface project{
   projectId: number
@@ -45,11 +45,12 @@ export class ApiServiceService {
 
   constructor(private http: HttpClient) { }
 
+
   addProject(project:project){
     return this.http.post<project>('http://localhost:5491/project/create', project)
   }
 
-  getProjects(){
+  getProjects() :Observable<project[]>{
     return this.http.get<project[]>('http://localhost:5491/project/allprojects')
     .pipe(map((res)=>{
       return res
@@ -69,7 +70,7 @@ export class ApiServiceService {
   }
 
 
-  loginUser(logins:user){
+  loginUser(logins:user):Observable<loginMessage>{
     this.checkUserRole()
     return this.http.post<loginMessage>('http://localhost:5491/user/login', logins)
   }
@@ -97,5 +98,12 @@ export class ApiServiceService {
       return res
     })
     )
+  }
+  deleteProject(projectname:project):Observable<project>{
+    return this.http.get<project>(`http://localhost:5491/project/delete/${projectname}`)
+  }
+
+  setComplete(projectname:any):Observable<project>{
+    return this.http.get<project>(`http://localhost:5491/project/complete/${projectname}`)
   }
 }

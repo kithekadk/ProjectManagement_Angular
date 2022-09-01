@@ -1,6 +1,7 @@
 <div>
     <div class="regProject">
         <p style="color : green; padding-left:30px;" *ngIf="disclaimer">Project registered successfully</p>
+        <p style="color : red; padding-left:30px;" *ngIf="disclaimer2">Please input all the fields</p>
         <form [formGroup]="form" (ngSubmit)="addProject()">
             
             

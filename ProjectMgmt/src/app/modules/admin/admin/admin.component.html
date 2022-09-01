@@ -6,15 +6,15 @@
         <br><br>
         <h2>PROJECTS</h2>
        
-        <h5 (click)="filterCategory('')"><a>All Projects</a></h5>
+        <!-- <h5 (click)="filterCategory('')"><a>All Projects</a></h5> -->
         <h5 (click)="filterCategory('Pending')"><a>Pending</a></h5>
-        <h5 (click)="filterCategory('Completed')"><a>Completed</a></h5> 
+        <h5 (click)="filterCategory('Complete')"><a>Completed</a></h5> 
         <h2>USERS</h2>
         <h5><a>All Users</a></h5>
     </div>
     <div class="navBar">
         <div>
-            <input type="text" placeholder="Search Project ..." id="">
+            <input type="text" placeholder="Search Project ...">
             <i (click)="onLogout()" style="font-size: 35px; cursor: pointer; color: white;" class="fa-solid fa-power-off"></i>
         </div>
     </div>
@@ -42,13 +42,14 @@
         <div class="parentProject">
            
 
-                <div  *ngFor="let project of myProjects2">
+                <div  *ngFor="let project of myProjects2  | async;">
                     <div class="oneProject">
                         <p>Name:  {{project.projectName}}</p>
                         <p>Desc:  {{project.description}}</p>
                         <p>Due:   {{project.deadline}}</p>
                         <p>status:{{project.status}}</p>  
-                        <i style="color: red; font-size:20px;" class="fa-sharp fa-solid fa-trash"></i>
+                        <button (click)="onDelete(project.projectName)"><i style="color: red; font-size:20px;" class="fa-sharp fa-solid fa-trash"></i></button>
+                        {{(deleteResp$ | async)}}
                     </div>
                 </div>
 

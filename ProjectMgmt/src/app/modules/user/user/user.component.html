@@ -6,15 +6,33 @@
     </div>
     <div class="display">
         PROJECTS
-        <div *ngFor="let project of myProjects">
-            <div>
-                <p>Project ID{{project.projectId}}</p>
-                <p>Project Name{{project.projectName}}</p>
-                <p>Project Description{{project.description}}</p>
-                <p>Project Deadline{{project.deadline}}</p>
-            </div>
-        </div>
-    </div>
+        <table id="users" *ngIf="myProjects.length; else disclaimer">
+            <thead>
+                <tr>
+                    <th>Project ID</th>
+                    <th>Project Name</th>
+                    <th>Project Description</th>
+                    <th>Project Deadline</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
 
+
+            <tbody>
+                <tr *ngFor="let project of myProjects">
+                    <td>{{project.projectId}}</td>
+                    <td>{{project.projectName}}</td>
+                    <td>{{project.description}}</td>
+                    <td>{{project.deadline}}</td>
+                    <td><button (click)="Complete(project.projectName)">Mark As Done</button></td>
+                </tr>
+            </tbody>
+        </table>
+           
+        
+
+    </div>
+    <ng-template #disclaimer>No tasks at the Moment</ng-template>
 
 </div>
+

@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
 
 
   role!:role
+
   constructor(private apiService:ApiServiceService, private router:Router) { }
 
   ngOnInit(): void {
@@ -21,9 +22,10 @@ export class LoginComponent implements OnInit {
   login(data: user){
     this.apiService.loginUser(data).subscribe(res=>{
       localStorage.setItem("token", res.token)
+      this.checkRole()
     })
     setTimeout(() => {
-      this.checkRole()
+      
       this.redirect() 
     }, 500);
   }
@@ -38,10 +40,16 @@ export class LoginComponent implements OnInit {
   redirect(){
     let role = localStorage.getItem('role')
     if ( role == 'user'){
+      
       this.router.navigate(['/home/user/dashboard']);
 
+      localStorage.setItem('isLoggedIn', 'true')
+
     }else if(role == 'admin'){
+
       this.router.navigate(['/admin/dashboard']);
+
+      localStorage.setItem('isLoggedIn', 'true')
     }
   }
 
