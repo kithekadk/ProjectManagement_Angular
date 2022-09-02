@@ -6,7 +6,9 @@ import { AuthGuardGuard } from './modules/auth/auth-guard.guard';
 
 const routes: Routes = [
   {path:'', redirectTo:'/home/main', pathMatch:'full'},
+
   {path:'home', component:HeaderComponent,
+
   children:[
    {path:'main', component:HomePageComponent}, 
    {
@@ -19,6 +21,7 @@ const routes: Routes = [
       loadChildren:()=>import('./modules/user/user.module')
     .then(mod=>mod.UserModule),canActivate: [AuthGuardGuard]}
   ]},
+  
   {path:'admin', loadChildren:()=>import('./modules/admin/admin.module')
   .then(mod=>mod.AdminModule),canActivate: [AuthGuardGuard]},
   
