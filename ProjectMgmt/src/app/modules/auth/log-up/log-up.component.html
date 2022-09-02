@@ -2,30 +2,32 @@
     <div class="signUp">
         <form [formGroup]="form" (ngSubmit)="onRegister()" class="signUpForm">
             <div style="text-align: center;"><h2>CREATE AN ACCOUNT</h2></div><br>
+            <!-- <p style="color: green;" ngIf=filled>Project created successfully</p><br> -->
             <div>
                 <label for="firstName">Input first name</label><br>
                 <input type="text" formControlName="firstName" id="firstName">
-                <p *ngIf="form.controls['firstName'].dirty && form.hasError('required','firstName')">*First name is required</p>
+                <p style="color: red;" *ngIf="!form.get('firstName')!.valid && form.get('firstName')!.touched">Input a valid first name</p>
             </div>
             <div>
                 <label for="lastName">Input last name</label><br>
-                <input type="text" formControlName="lastName" id="lastName">
-                <p></p>
+                <input type="text" formControlName="lastName" id="lastName"><br>
+                <p style="color: red;" *ngIf="!form.get('lastName')!.valid && form.get('lastName')!.touched">Input a valid last name</p>
             </div>
             <div>
                 <label for="username">Input username</label><br>
-                <input type="text" formControlName="userName">
-                <p></p>
+                <input type="text" formControlName="userName"><br>
+                <p style="color: red;" *ngIf="!form.get('userName')!.valid && form.get('userName')!.touched">Input a valid user name</p>
             </div>
             <div>
                 <label for="email">Input Email</label><br>
-                <input type="email" formControlName="email">
-                <span *ngIf="form.controls['email'].dirty && form.hasError('required','email')">*Input a valid email</span>
+                <input type="email" formControlName="email" placeholder="format abc@thejitu.com"><br>
+                <span style="color: red;" *ngIf="!form.get('email')!.valid && form.get('email')!.touched">*Input a valid email</span>
             </div>
             <div>
                 <label for="password">Input Password</label><br>
-                <input type="password" formControlName="password">
-                <p></p>
+                <input type="password" formControlName="password"><br>
+                <span style="color: red;" *ngIf="!form.get('password')!.valid && form.get('password')!.touched">*Input a valid password</span>
+
             </div>
 
 <br>

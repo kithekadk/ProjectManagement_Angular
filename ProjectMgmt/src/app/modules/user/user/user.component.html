@@ -5,7 +5,7 @@
         <br><br>
     </div>
     <div class="display">
-        PROJECTS
+        <h1>PROJECTS</h1>
         <table id="users" *ngIf="myProjects.length; else disclaimer">
             <thead>
                 <tr>
@@ -32,7 +32,13 @@
         
 
     </div>
-    <ng-template #disclaimer>No tasks at the Moment</ng-template>
+    <ng-template #disclaimer>
+        <div>
+            <p>
+            No tasks at the Moment
+            </p>
+        </div>
+    </ng-template>
 
 </div>
 

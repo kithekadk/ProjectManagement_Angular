@@ -23,9 +23,7 @@ export class AdminComponent implements OnInit {
     this.showProjects()
   }
 
-  // Search(){
-  //   this.apiService.activate.emit(this.project)
-  // }
+  
   showProjects(){
     this.myProjects= this.apiService.getProjects()
     this.myProjects2= this.apiService.getProjects()
@@ -34,7 +32,7 @@ export class AdminComponent implements OnInit {
   filterCategory(status:string){
     this.myProjects2 = this.myProjects.pipe(map(item => {
       let projects = item.filter(el=>el.status=== status || el.status==' ')
-      // let projects = (item === status || status == '')
+
       return projects
     }))
     return this.myProjects2

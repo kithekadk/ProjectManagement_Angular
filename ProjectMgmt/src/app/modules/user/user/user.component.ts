@@ -16,7 +16,7 @@ export class UserComponent implements OnInit {
     
     this.apiService.getMyTask().subscribe(res=>{
       const newResult = res.filter((el)=>{
-        return el.userName ==localStorage.getItem('userName')
+        return el.userName == localStorage.getItem('userName')
       })
       
       this.myProjects = newResult

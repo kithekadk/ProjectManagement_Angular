@@ -5,6 +5,8 @@
     align-items: center;
     justify-content: center;
     margin-top: 10px;
+    background-color: skyblue;
+    height: 83vh;
 }
 .signUpForm{
     padding: 30px;
@@ -26,3 +28,5 @@ input.ng-invalid.ng-touched{
 input.ng-valid.ng-touched{
     border:2px solid green
 }
+
+

@@ -14,7 +14,8 @@
     </div>
     <div class="navBar">
         <div>
-            <input type="text" placeholder="Search Project ...">
+            <!-- <input type="text" placeholder="Search Project ..."> -->
+            <h1 style="color:white">THE PMUS SYSTEM</h1>
             <i (click)="onLogout()" style="font-size: 35px; cursor: pointer; color: white;" class="fa-solid fa-power-off"></i>
         </div>
     </div>
@@ -49,7 +50,7 @@
                         <p>Due:   {{project.deadline}}</p>
                         <p>status:{{project.status}}</p>  
                         <button (click)="onDelete(project.projectName)"><i style="color: red; font-size:20px;" class="fa-sharp fa-solid fa-trash"></i></button>
-                        {{(deleteResp$ | async)}}
+                        <p style="color:blueviolet">{{(deleteResp$ | async)}}</p>
                     </div>
                 </div>
 

@@ -2,11 +2,15 @@
     width: 100%;
     padding: 20px;
     display: flex;
+    gap:20px
 }
 .dashboard{
     width: 20vw;
     display: flex;
     flex-direction: column;
+    height: 83vh;
+    background-color: blueviolet;
+    padding:30px;
 }
 
 #users td, #users th {
@@ -29,6 +33,10 @@
 .display{
     display: flex;
     flex-direction: column;
+    background-color: skyblue;
+    height: 83vh;
+    width: 100%;
+    padding: 30px;
 }
 
 #disclaimer{

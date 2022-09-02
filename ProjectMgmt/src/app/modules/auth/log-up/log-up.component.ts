@@ -24,6 +24,8 @@ export class LogUpComponent implements OnInit {
         password: ['', Validators.required]
       })
   }
+  
+filled=false
 
   onRegister(){
     const obj={
